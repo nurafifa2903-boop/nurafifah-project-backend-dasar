@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    background-color: #fafafa;
+    line-height: 1.6;
+    padding: 10px;
+    font-size: 16px;
+    padding-top: 20px;
+    transition: background-color 0.5s ease;
+}
+
+main{
+    display: flex;
+    gap: 20px;
+    flex-wrap:wrap; 
+    flex-direction: column;
+}
+
+h1, h2, h3 {
+    color: #222;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+    color: #555;
+    font-size: 1rem;
+}
+article {
+    background-color:  rgb(241, 226, 226);
+    border: 1px solid rgb(206, 202, 202);
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    flex: 2;
+}
+
+aside{
+    flex: 1;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.grid-container .item{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.grid-container .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+@media (min-width:768px) {
+    main {
+        flex-direction: row;
+    }
+}
+
+@media (min-width:1024px) {
+    main {
+        max-width: 1200px;
+        margin: auto;
+    }
+    body {
+        font-size: 18px;
+    }
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width:480px) {
+    body {
+        background-color: #7e57c2;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
+    }
+
+    .grid-container .item {
+        padding: 20px;
+    }
+}
+
+nav{
+    transition: 0.3 ease;
+}
+
+nav.show-nav {
+    opacity: 1;
+    pointer-events: auto;
+}
+nav {
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.dark{
+    background-color: #222;
+    color: #eee;
+}
+
+body.dark nav a {
+    color:#fff;
+}
+
+.big-text {
+    font-size: 3rem;
+    transition: 0.3s ease;
+}
+
+.hover-effect {
+    background-color: rgb(206, 202, 202);
+    transition: 0.3s ease;
+}
+
+.nav-big {
+    font-size: 2rem;
+    transition: 0.3s ease;
+}
+
+.scroll-bg {
+    background-color:darksalmon;
+    transition: 0.4s ease ;
+}
