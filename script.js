@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", ()=> {
     const title  = document.querySelector("h1");
     const nav = document.querySelector("nav");
@@ -38,5 +39,20 @@ document.addEventListener("DOMContentLoaded", ()=> {
         } else {
             document.body.classList.remove("scrooll-bg");
         }
+    });
+
+    document.getElementById('btn').addEventListener('click', function() {
+        fetch('/api/info').then(response => response.json()).then(data => {
+            const formatwaktu = new Date(data.waktu).toLocaleString('id-ID', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('timeDisplay').textContent = formatwaktu;
+        });
     });
 });
